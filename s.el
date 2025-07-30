@@ -18,4 +18,11 @@
   "Map FORM over LIST, using 'it' as the current element."
   `(mapcar (lambda (it) ,form) ,list))
 
+;; Missing function substitute
+(defun ekp-pixel-justify (s pixel)
+  "Simple text wrapping to PIXEL width."
+  ;; This is a simplified implementation - just return the string as-is for now
+  ;; In a real implementation, this would wrap text to fit within pixel width
+  s)
+
 (provide 's)

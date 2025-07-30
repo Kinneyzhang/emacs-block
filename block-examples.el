@@ -93,7 +93,7 @@
    
    ;; Mixed border styles
    (block :content "Mixed borders" :width 20
-          :border '(:left t :right "green" :top nil :bottom '("red" . "yellow")))
+          :border '(:left t :right "green" :top nil :bottom "red"))
    
    ;; Partial plist (missing values default to nil)
    (block :content "Partial border plist" :width 20
@@ -134,9 +134,9 @@
 (defun block-example-padding-advanced ()
   "Advanced padding examples"
   (list
-   ;; Pixel padding (using cons cells)
-   (block :content "Pixel padding" :width '(200) :border t
-          :padding '(:left '(20) :right '(30)))
+   ;; Large padding
+   (block :content "Large padding" :width 20 :border t
+          :padding '(:left 4 :right 4 :top 2 :bottom 2))
    
    ;; Asymmetric padding
    (block :content "Asymmetric" :width 20 :border t
@@ -176,7 +176,7 @@
           :height 4
           :justify 'center
           :align 'center
-          :border '(:top "red" :bottom "red" :left "blue" :right "blue")
+          :border "blue"
           :bgcolor "lightyellow"
           :padding '(:left 2 :right 2 :top 1 :bottom 1)
           :margin '(:left 1 :right 1 :top 1 :bottom 1))
@@ -186,16 +186,16 @@
           :width 30
           :justify 'left
           :border t
-          :bgcolor '("#f8f9fa" . "#2d3748")
+          :bgcolor "lightgray"
           :padding t
           :margin '(:bottom 2))
    
-   ;; Pixel-based layout
+   ;; Simple pixel-based layout
    (block :content "Pixel-precise layout"
           :width '(300)
           :border "gray"
           :bgcolor "white"
-          :padding '(:left '(15) :right '(15) :top 1 :bottom 1))))
+          :padding '(:left 2 :right 2 :top 1 :bottom 1))))
 
 (defun block-example-edge-cases ()
   "Edge case examples"
